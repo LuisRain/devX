@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: webexample
+
+server:
+  port: 8600 # http端口号
+
+devx:
+  basic:
+    name: web-example
+    version: 1.0
+    desc: web-example desc
+    web-site: www.william.com
+    doc:
+      base-package: com.william.devx.controller # API文档路径
+    format:
+      use-unity-error: true #是否启用统一响应，默认true
+      reuse-http-state: false # 默认true， true:重用http状态码，false:使用协议无关格式
+
+logging:
+  path: ./logs
+
+
+show-exception: true
+
+
+############################## Swagger-UI #################################
+#标题
+swagger:
+  title: web_example
+  description: web_example 1.x
+  version: 0.1
+  license:
+  licenseUrl:
+  termsOfServiceUrl:
+  contact:
+    name:
+    url:
+    email: 1120sungang@gmail.com
+  base-package: com.william.devx.controller
+  base-path: /**
+  exclude-path: /admin/error, /admin/dashboard/**
+############################## Swagger-UI #################################

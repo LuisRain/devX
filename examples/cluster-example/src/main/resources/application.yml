@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: cluster-example
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    pool:
+      max-active: 10
+      max-wait: -1
+      max-idle: 1
+      min-idle: 0
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: root
+    password: 123456
+    virtual-host: devx
+  hazelcast:
+    addresses: ["127.0.0.1"]
+
+devx:
+  cluster:
+    cache: redis
+    dist: redis # 可选 redis/hazelcast
+    mq: rabbit # 可选 redis/hazelcast/rabbit
+    #election: eureka
+
+# https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+

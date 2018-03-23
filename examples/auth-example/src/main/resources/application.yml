@@ -1,0 +1,45 @@
+server:
+  port: 8082
+
+#
+spring:
+  application:
+    name: auth-example
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+
+
+show-exception: true
+
+#系统配置
+devx:
+  cluster:
+    cache: redis
+  security:
+    token-flag: _token_
+    token-in-header: true
+    token-hash: false
+
+
+
+
+
+############################## Swagger-UI #################################
+#标题
+swagger:
+  title: auth_example
+  description: auth_example 1.x
+  version: 0.1
+  license:
+  licenseUrl:
+  termsOfServiceUrl:
+  contact:
+    name:
+    url:
+    email: 1120sungang@gmail.com
+  base-package: com.william.devx.auth.controller
+  base-path: /**
+  exclude-path: /admin/error, /admin/dashboard/**
+############################## Swagger-UI #################################
