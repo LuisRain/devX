@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.william.devx</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0-RC</version>
         <relativePath>../../modules/parent/</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -20,9 +20,10 @@
 
     <dependencies>
 
+        <!-- Test -->
         <dependency>
             <groupId>com.william.devx</groupId>
-            <artifactId>devx-boot-starter</artifactId>
+            <artifactId>devx-test-starter</artifactId>
         </dependency>
 
         <!--引入幂等支持-->
@@ -30,15 +31,13 @@
             <groupId>com.william.devx</groupId>
             <artifactId>devx-idempotent-starter</artifactId>
         </dependency>
-        <!--使用幂等的Redis实现-->
+
         <dependency>
             <groupId>com.william.devx</groupId>
             <artifactId>devx-cluster-redis</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.william.devx</groupId>
-            <artifactId>devx-test-starter</artifactId>
-        </dependency>
+
+
 
     </dependencies>
 </project>

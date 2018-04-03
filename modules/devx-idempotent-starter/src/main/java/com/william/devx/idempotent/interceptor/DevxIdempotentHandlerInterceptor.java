@@ -14,6 +14,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 接口 拦截器
+ */
 @Component
 public class DevxIdempotentHandlerInterceptor extends HandlerInterceptorAdapter {
 

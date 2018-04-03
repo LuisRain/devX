@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.william.devx.idempotent.DewIdempotentAutoConfiguration
+com.william.devx.idempotent.DevxIdempotentAutoConfiguration

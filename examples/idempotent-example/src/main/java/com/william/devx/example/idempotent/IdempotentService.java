@@ -19,10 +19,11 @@ public class IdempotentService {
     @PostConstruct
     public void init() {
         // 初始化用到的操作类型
-        DevxIdempotent.initOptTypeInfo("transfer_a", true, 1000, StrategyEnum.ITEM);
-        DevxIdempotent.initOptTypeInfo("transfer_b", true, 1000, StrategyEnum.ITEM);
+//        DevxIdempotent.initOptTypeInfo("transfer_a", true, 1000, StrategyEnum.ITEM);
+//        DevxIdempotent.initOptTypeInfo("transfer_b", true, 1000, StrategyEnum.ITEM);
         // ……
-        send();
+//        send();
+        System.out.println("");
     }
 
     public void send() {

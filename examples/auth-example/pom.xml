@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.william.devx</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0-RC</version>
         <relativePath>../../modules/parent/</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -22,6 +22,12 @@
         <dependency>
             <groupId>com.william.devx</groupId>
             <artifactId>devx-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 引入Web模块 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>

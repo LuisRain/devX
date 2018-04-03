@@ -13,6 +13,7 @@ import com.william.devx.core.fun.VoidExecutor;
 import com.william.devx.core.fun.VoidPredicate;
 import com.william.devx.core.jdbc.DS;
 import com.william.devx.core.jdbc.DSManager;
+import com.william.devx.core.utils.NetUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -82,7 +82,8 @@ public class Devx {
         if (Devx.applicationContext.containsBean(DSManager.class.getSimpleName())) {
             Devx.applicationContext.getBean(DSManager.class);
         }
-//        Devx.Info.name = applicationName;
+
+        Devx.Info.name = applicationName;
         // Load Auth Adapter
         auth = Devx.applicationContext.getBean(BasicAuthAdapter.class);
         // Support java8 Time
@@ -90,22 +91,11 @@ public class Devx {
             jacksonProperties.getSerialization().put(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         }
         // Load Immediately
-//        String packageName = Devx.class.getPackage().getName();
-//        Set<Class<?>> loadOrders = $.clazz.scan(packageName, new HashSet<Class<? extends Annotation>>() {{
-//            add(DevxLoadImmediately.class);
-//        }}, null);
-//        loadOrders.forEach(loadOrder -> Devx.applicationContext.getBean(loadOrder));
-    }
-
-
-    public static class Constant {
-        // token存储key
-        public static final String TOKEN_INFO_FLAG = "devx:auth:token:info:";
-        // Token Id 关联 key : DevX:auth:token:id:rel:<code> value : <token Id>
-        public static final String HTTP_REQUEST_FROM_FLAG = "Request-From";
-
-        public static final String TOKEN_ID_REL_FLAG = "devx:auth:token:id:rel:";
-
+        String packageName = Devx.class.getPackage().getName();
+        Set<Class<?>> loadOrders = $.clazz.scan(packageName, new HashSet<Class<? extends Annotation>>() {{
+            add(DevxLoadImmediately.class);
+        }}, null);
+        loadOrders.forEach(loadOrder -> Devx.applicationContext.getBean(loadOrder));
     }
 
 
@@ -123,16 +113,24 @@ public class Devx {
         public static String instance;
 
         static {
-            try {
-                ip = InetAddress.getLocalHost().getHostAddress();
-                host = InetAddress.getLocalHost().getHostName();
-                instance = $.field.createUUID();
-            } catch (UnknownHostException e) {
-                log.error("devx info fetch error.", e);
-            }
+            InetAddress inetAddress = NetUtils.getLocalAddress();
+            ip = inetAddress.getHostAddress();
+            host = inetAddress.getHostName();
+
+            instance = $.field.createUUID();
         }
     }
 
+
+    public static class Constant {
+        // token存储key
+        public static final String TOKEN_INFO_FLAG = "devx:auth:token:info:";
+        // Token Id 关联 key : DevX:auth:token:id:rel:<code> value : <token Id>
+        public static final String HTTP_REQUEST_FROM_FLAG = "Request-From";
+
+        public static final String TOKEN_ID_REL_FLAG = "devx:auth:token:id:rel:";
+
+    }
 
     public static DS ds() {
         return DSManager.select("");
@@ -319,5 +317,10 @@ public class Devx {
 
     }
 
+
+    public static void main(String[] args) {
+        String instance = $.field.createUUID();
+        System.out.println(instance);
+    }
 
 }

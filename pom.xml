@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.william.devx</groupId>
+    <artifactId>devX</artifactId>
+    <version>1.0.0-RC</version>
+    <packaging>pom</packaging>
+
+    <name>devX</name>
+    <url>http://maven.apache.org</url>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 模块 -->
+    <modules>
+
+        <!-- 基础组件 -->
+        <module>modules/parent</module>
+        <module>modules/devx-boot-starter</module>
+        <module>modules/devx-cloud-starter</module>
+        <module>modules/devx-common</module>
+        <module>modules/devx-cluster-common</module>
+        <module>modules/devx-cluster-redis</module>
+        <module>modules/devx-cluster-rabbitmq</module>
+        <module>modules/devx-cluster-kafka</module>
+        <module>modules/devx-cluster-hazelcast</module>
+        <module>modules/devx-cluster-eureka</module>
+
+
+        <module>modules/devx-idempotent-starter</module>
+
+        <module>modules/devx-test-starter</module>
+        <module>modules/devx-logging-starter</module>
+
+        <module>modules/devx-jdbc-starter</module>
+        <module>modules/devx-mybatis-mapper</module>
+        <module>modules/devx-mybatis-plus</module>
+
+        <!-- Examples -->
+        <module>examples/cache-example</module>
+        <module>examples/web-example</module>
+        <module>examples/jdbc-example</module>
+        <module>examples/log-example</module>
+        <module>examples/devx-mybatis-mapper-example</module>
+        <module>examples/devx-mybatis-plus-example</module>
+        <module>examples/cluster-example</module>
+        <module>examples/sharding-example</module>
+        <module>examples/idempotent-example</module>
+        <module>examples/auth-example</module>
+        <module>examples/monitor-example</module>
+        <module>examples/webflux-example</module>
+
+
+    </modules>
+
+
+</project>

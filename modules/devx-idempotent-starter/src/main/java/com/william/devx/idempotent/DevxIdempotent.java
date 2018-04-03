@@ -14,7 +14,7 @@ import java.util.Map;
 @Slf4j
 public class DevxIdempotent {
 
-    // optType -> DewIdempotentProcessor
+    // optType -> DevxIdempotentProcessor
     private static final Map<String, OptTypeInfo> CONTENT = new HashMap<>();
 
     // optType,optId

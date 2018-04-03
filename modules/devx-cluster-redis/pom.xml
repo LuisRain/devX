@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.william.devx</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0-RC</version>
         <relativePath>../../modules/parent/</relativePath>
     </parent>
 
@@ -14,7 +14,6 @@
     <packaging>jar</packaging>
     <name>devx-cluster-redis</name>
     <url>http://maven.apache.org</url>
-    <version>1.0.0-SNAPSHOT</version>
 
 
     <properties>
@@ -22,9 +21,21 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.william.devx</groupId>
+            <artifactId>devx-common</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.william.devx</groupId>
             <artifactId>devx-cluster-common</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.william.devx</groupId>
+                    <artifactId>devx-common</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

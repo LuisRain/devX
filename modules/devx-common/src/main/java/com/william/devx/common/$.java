@@ -5,7 +5,7 @@ import com.william.devx.common.reflect.ReflectUtils;
 import com.william.devx.common.regex.RegexType;
 
 /**
- * DEW Common 操作入口
+ * Devx Common 操作入口
  */
 public class $ {
 
@@ -62,8 +62,6 @@ public class $ {
         return new TimeHelper();
     }
 
-    public static DateUtils date = new DateUtils();
-
     /**
      * 定时器操作
      */
@@ -87,9 +85,6 @@ public class $ {
     public static HttpHelper http = HttpHelperFactory.choose();
 
 
-    public static EncryptHelper encrypt = new EncryptHelper();
-
-
     /**
      * Http操作
      *
@@ -103,10 +98,6 @@ public class $ {
         return HttpHelperFactory.choose(maxTotal, maxPerRoute, defaultConnectTimeoutMS, defaultSocketTimeoutMS, retryAble);
     }
 
-    /**
-     * 金额操作
-     */
-    public static AmountHelper amount = new AmountHelper();
 
 
     /**
@@ -117,9 +108,22 @@ public class $ {
      * 正则
      */
     public static RegexType regexType = new RegexType();
+
+
+
+    public static EncryptHelper encrypt = new EncryptHelper();
+
+
+
     /**
      * 计算
      */
-
     public static BigDecimalHelper bigDecimal = new BigDecimalHelper();
+    /**
+     * 金额操作
+     */
+    public static AmountHelper amount = new AmountHelper();
+
+
+    public static DateUtils date = new DateUtils();
 }

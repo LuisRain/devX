@@ -15,13 +15,13 @@ public class DevxIdempotentAutoConfiguration {
     private static final Logger logger = LoggerFactory.getLogger(DevxIdempotentAutoConfiguration.class);
 
     @Autowired
-    private DevxIdempotentConfig dewIdempotentConfig;
+    private DevxIdempotentConfig devxIdempotentConfig;
     @Autowired
-    private DevxIdempotent dewIdempotent;
+    private DevxIdempotent devxIdempotent;
 
     @PostConstruct
     private void init() {
-        logger.info("Enabled Dew Idempotent");
+        logger.info("Enabled Devx Idempotent");
     }
 
 }

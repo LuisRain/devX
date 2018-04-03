@@ -1,4 +1,4 @@
-package com.william.devx.mybatisplus.cache.example.dto;
+package com.william.devx.cache.example.dto;
 
 import java.io.Serializable;
 import java.util.Date;

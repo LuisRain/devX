@@ -1,7 +1,7 @@
-package com.william.devx.mybatisplus.cache.example;
+package com.william.devx.cache.example;
 
-import com.william.devx.mybatisplus.cache.example.dto.CacheExampleDTO;
-import com.william.devx.mybatisplus.cache.example.service.CacheExampleService;
+import com.william.devx.cache.example.dto.CacheExampleDTO;
+import com.william.devx.cache.example.service.CacheExampleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
