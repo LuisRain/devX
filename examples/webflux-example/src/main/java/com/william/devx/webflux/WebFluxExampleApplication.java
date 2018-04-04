@@ -12,6 +12,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  */
 @ComponentScan(basePackageClasses = {Devx.class, WebFluxExampleApplication.class})
 @MapperScan("com.william.devx.webflux.mapper")
+@EnableSwagger2Doc
 public class WebFluxExampleApplication extends DevxBootApplication {
 
     public static void main(String[] args) {
